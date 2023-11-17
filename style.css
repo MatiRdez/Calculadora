@@ -1,0 +1,88 @@
+@font-face{ /* Se asigna una fuente personalizada */
+    font-family: "Calculadora";
+    src: url("DS-DIGIT.TTF");
+}
+
+*{ /* Diseño general */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{ /* Diseño del cuerpo de página */
+    min-height: 100vh;
+    background-color: rgb(141, 10, 10);
+    display: grid;
+    place-items: center;
+}
+
+.fondo{ /* Diseño de fondo personalizado */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ff5500' fill-opacity='1' d='M0,128L72,192L144,192L216,256L288,64L360,96L432,32L504,160L576,128L648,192L720,224L792,96L864,256L936,288L1008,32L1080,0L1152,288L1224,288L1296,288L1368,96L1440,96L1440,320L1368,320L1296,320L1224,320L1152,320L1080,320L1008,320L936,320L864,320L792,320L720,320L648,320L576,320L504,320L432,320L360,320L288,320L216,320L144,320L72,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat center center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.calculadora{ /* Diseños de calculadora */
+    background-color: rgb(17, 6, 70);
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 350px;
+    max-width: 100%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    gap: .5rem;
+    border: 4px solid rgb(0, 0, 0);
+}
+
+.display{ /* Diseño de la pantalla */
+    grid-column: 1 / -1;
+    background-color: black;
+    padding: 1.5rem;
+    font-size: 2rem;
+    text-align: right;
+    border-radius: .5rem;
+    margin-bottom: 1rem;
+    font-family: "Calculadora";
+    font-weight: 600;
+    overflow-x: auto;
+    border: 2px solid white;
+}
+
+.boton{ /* Diseño de los botones */
+    background-color: black;
+    color: white;
+    border: 0;
+    padding: 1.5rem .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 18px;
+    border: 2px solid white;
+}
+
+.boton:hover{ /* Botones al pasar el cursor */
+    background-color: black;
+}
+
+#cero{ /* Espacio que ocupa el "0" */
+    grid-column: span 3;
+}
+
+#igual{ /* Espacio y color del "=" */
+    grid-row: span 2;
+    background-color: brown;
+}
+
+#igual:hover{ /* Simbolo "=" al pasar el cursor */
+    background-color: rgb(140, 20, 20);
+}
